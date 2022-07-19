@@ -29,14 +29,14 @@ MonoBehaviour:
   m_UseAssetBundleCrc: 1
   m_UseAssetBundleCrcForCachedBundles: 1
   m_UseUWRForLocalBundles: 0
-  m_Timeout: 0
+  m_Timeout: 5
   m_ChunkedTransfer: 0
   m_RedirectLimit: -1
-  m_RetryCount: 0
+  m_RetryCount: 3
   m_BuildPath:
     m_Id: bd8334c19667c1c458e58d7902e3d86b
   m_LoadPath:
-    m_Id: https://playabledesign.github.io/Assets/remote
+    m_Id: 52f665555c51c9b499b038311b8e1598
   m_BundleMode: 0
   m_AssetBundleProviderType:
     m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

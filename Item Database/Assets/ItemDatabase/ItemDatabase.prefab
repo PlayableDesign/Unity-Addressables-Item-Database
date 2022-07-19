@@ -47,6 +47,7 @@ MonoBehaviour:
   itemLabels:
   - items_basic
   - items_rare
+  - items_remote
   OnItemDatabaseLoaded:
     m_PersistentCalls:
       m_Calls:

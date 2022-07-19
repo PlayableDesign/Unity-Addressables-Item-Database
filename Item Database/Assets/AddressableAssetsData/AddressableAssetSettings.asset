@@ -34,9 +34,9 @@ MonoBehaviour:
   m_MonoScriptBundleNaming: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
-    m_Id: bd8334c19667c1c458e58d7902e3d86b
+    m_Id: a12216b9c8af12046aa0f6a0b32c0cdb
   m_RemoteCatalogLoadPath:
-    m_Id: 52f665555c51c9b499b038311b8e1598
+    m_Id: e85cef98c1b4631489115d3ef346d909
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: 
@@ -55,20 +55,6 @@ MonoBehaviour:
     - m_InheritedParent: 
       m_Id: dba5bc6717fb7bc46b1d8c7472826655
       m_ProfileName: Default
-      m_Values:
-      - m_Id: a2e537d077b08f14d9ec8a31dc0fb41d
-        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: a12216b9c8af12046aa0f6a0b32c0cdb
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: e85cef98c1b4631489115d3ef346d909
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: bd8334c19667c1c458e58d7902e3d86b
-        m_Value: ServerData/[BuildTarget]
-      - m_Id: 52f665555c51c9b499b038311b8e1598
-        m_Value: http://[PrivateIpAddress]:[HostingServicePort]
-    - m_InheritedParent: 
-      m_Id: d83f8fe2a1423d34683b1361e6eff619
-      m_ProfileName: Prod
       m_Values:
       - m_Id: a2e537d077b08f14d9ec8a31dc0fb41d
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
@@ -137,7 +123,7 @@ MonoBehaviour:
           m_Key: ContentRoot
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.Boolean
-          m_Data: True
+          m_Data: False
           m_Key: IsEnabled
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.String
