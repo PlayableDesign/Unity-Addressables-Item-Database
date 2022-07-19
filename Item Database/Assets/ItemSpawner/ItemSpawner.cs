@@ -1,19 +1,27 @@
 
-
 using System.Collections;
 using UnityEngine;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using Random = UnityEngine.Random;
 
 public class ItemSpawner : MonoBehaviour
 {
-    // Inspector References
+    [Space(10)]
+    [Header("References")]
+    [Space(10)]
 
     [SerializeField] private ItemDatabase itemDatabase;
-    [SerializeField] private Transform floor;
     [SerializeField] private Transform itemsContainer;
+
+    [Space(10)]
+
+    [SerializeField] private Transform floor;
     [SerializeField] private float floorBuffer;
-    [SerializeField] private AnimationCurve randomCurve;
+
+    [Space(10)]
+    [Header("Assets")]
+    [Space(10)]
+
+    [SerializeField] private ItemProbabilityAsset probability;
 
 
     // Private Cache
@@ -54,19 +62,13 @@ public class ItemSpawner : MonoBehaviour
         isMoving = false;
     }
 
-    public void OnItemSpawned(AsyncOperationHandle<GameObject> handle, string primaryKey)
+    public void OnItemSpawned(GameObject go, string primaryKey)
     {
-        GameObject itemGO = handle.Result;
-        Item item = itemGO.GetComponent<Item>();
-
         // Set the key for use in saving this item later in inventory
         // The key can be used to instantiate again from save
-        item.PrimaryKey = primaryKey;
 
-        // store the handle so that the Item can clean up on destroy
-        item.Handle = handle;
-
-        itemGO.transform.position = new Vector3(transform.position.x, y - 1f, transform.position.z);
+        go.GetComponent<Item>().PrimaryKey = primaryKey;
+        go.transform.position = new Vector3(transform.position.x, y - 1f, transform.position.z);
 
     }
 
@@ -99,21 +101,7 @@ public class ItemSpawner : MonoBehaviour
 
         transform.position = destination;
 
-        // Spawn an item here
-        var rY = Random.Range(0f, 1f);
-
-        if (rY <= 0.48f)
-        {
-            itemDatabase.SpawnItemByLabel("items_basic", itemsContainer);
-        }
-        else if (rY is > 0.48f and <= 0.96f)
-        {
-            itemDatabase.SpawnItemByLabel("items_remote", itemsContainer);
-        }
-        else
-        {
-            itemDatabase.SpawnItemByLabel("items_rare", itemsContainer);
-        }
+        itemDatabase.SpawnItemByLabel(probability.GetRandomLabel(), itemsContainer);
 
         yield return new WaitForSeconds(0.4f);
         isMoving = false;

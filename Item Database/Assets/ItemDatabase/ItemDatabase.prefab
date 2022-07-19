@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemLabels:
-  - items_basic
-  - items_rare
-  - items_remote
+  - m_LabelString: items_rare
+  - m_LabelString: items_basic
+  - m_LabelString: items_remote
   OnItemDatabaseLoaded:
     m_PersistentCalls:
       m_Calls:
