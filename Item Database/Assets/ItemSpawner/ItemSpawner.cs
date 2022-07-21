@@ -67,11 +67,12 @@ public class ItemSpawner : MonoBehaviour
         // Set the key for use in saving this item later in inventory
         // The key can be used to instantiate again from save
 
+        Debug.Log($"{name}: spawning item with key: {primaryKey}");
+
         go.GetComponent<Item>().PrimaryKey = primaryKey;
         go.transform.position = new Vector3(transform.position.x, y - 1f, transform.position.z);
 
     }
-
 
     // Private Methods
 
@@ -101,13 +102,12 @@ public class ItemSpawner : MonoBehaviour
 
         transform.position = destination;
 
-        itemDatabase.SpawnItemByLabel(probability.GetRandomLabel(), itemsContainer);
+        var label = probability.GetRandomLabel();
+
+        itemDatabase.SpawnItemByLabel(label, itemsContainer);
 
         yield return new WaitForSeconds(0.4f);
         isMoving = false;
     }
-
-
-
 
 }
